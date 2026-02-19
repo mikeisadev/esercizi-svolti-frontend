@@ -73,10 +73,13 @@ function descriviOggettoNomi(oggettoNomi) {
 function generaListaNomiHtml(oggettoNomi) {
     const listaUtentiHtml = document.querySelector("#listaNomi");
 
+    console.log(oggettoNomi);
+
     for (const lettera in oggettoNomi) {
         const listaNomi = oggettoNomi[lettera];
 
-        listaUtentiHtml.innerHTML += `<li>${lettera}: ${listaNomi.join(",  ")}</li>`;
+        listaUtentiHtml.innerHTML += `<li>Lettera ${lettera} (totale: ${listaNomi.length}):</li>`;
+        listaUtentiHtml.innerHTML += `<ul>${listaNomi.map(nome => `<li>${nome}</li>`).join("")}</ul>`;
     }
 }
 
